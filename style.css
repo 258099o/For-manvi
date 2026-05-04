@@ -1,0 +1,110 @@
+:root {
+    --bg-color: #fff9f9;
+    --text-color: #4a4a4a;
+    --accent-color: #d4a373; /* Elegant gold/bronze */
+    --heart-color: #e5989b;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.name-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Heart Animation */
+.heart-box {
+    margin: 50px 0;
+}
+
+.heart {
+    background-color: var(--heart-color);
+    display: inline-block;
+    height: 50px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 50px;
+    animation: pulse 1.5s infinite;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    background-color: var(--heart-color);
+    border-radius: 50%;
+    height: 50px;
+    position: absolute;
+    width: 50px;
+}
+
+.heart:before { top: -25px; left: 0; }
+.heart:after { left: 25px; top: 0; }
+
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.2); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+/* Button & Hidden Message */
+button {
+    background: none;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 10px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.hidden {
+    display: none;
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--heart-color);
+}
+
+/* Fade-in Animation */
+.fade-in {
+    animation: fadeIn 2.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
